@@ -1,6 +1,6 @@
 <template>
     <div id="allCards">
-        <div id ="card">
+        <div id="card">
             <h1>{{ Destination.name }}</h1>
             <img :src = "Destination.img" alt="">
             <h2>{{ clicked }}</h2>
@@ -28,7 +28,7 @@ img {
     object-fit: cover;
 }
 #card {
-  display: flex;
+    display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -39,9 +39,9 @@ img {
 #allCards {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
-  max-width: 1500px;
-  margin: 0 auto;
+  max-width: 1500rem;
   padding: 2rem;
 }
 </style>
