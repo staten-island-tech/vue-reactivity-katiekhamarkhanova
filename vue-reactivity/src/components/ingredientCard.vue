@@ -1,24 +1,17 @@
 <template>
     <div id="allCards">
         <div id="card">
-            <h1>{{ Destination.name }}</h1>
-            <img :src = "Destination.img" alt="">
-            <h2>{{ clicked }}</h2>
-            <button @click="increment">Click ME</button>
+            <h1>{{ Ingredient.name }}</h1>
+            <img :src = "Ingredient.img" alt="">
+            <button>Add to Recipe</button>
         </div>
     </div>
 </template>
 
 <script setup>
-import {ref} from "vue";
 const props = defineProps({
-    Destination: Object,
+    Ingredient: Object,
 });
-// Clicker logic
-const clicked = ref(0);
-function increment() {
-    clicked.value++;
-}
 </script>
 
 <style scoped>
@@ -28,7 +21,7 @@ img {
     object-fit: cover;
 }
 #card {
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
