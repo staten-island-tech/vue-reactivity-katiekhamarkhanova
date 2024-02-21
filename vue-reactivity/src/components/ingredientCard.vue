@@ -1,11 +1,9 @@
 <template>
-    <div id="allCards">
         <div id="card">
             <h1>{{ Ingredient.name }}</h1>
             <img :src = "Ingredient.img" alt="">
             <button>Add to Recipe</button>
         </div>
-    </div>
 </template>
 
 <script setup>
@@ -16,25 +14,19 @@ const props = defineProps({
 
 <style scoped>
 img {
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
 }
 #card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  display: block;
-  width: 23%;
-  height: 50%;
+  width: 20%;
+  margin: 1rem;
 }
-#allCards {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 1500rem;
-  padding: 2rem;
+button {
+  margin: 1rem;
 }
 </style>
