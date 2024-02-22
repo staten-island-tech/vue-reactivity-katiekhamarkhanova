@@ -1,68 +1,182 @@
 <template>
+  <div id="container">
   <div id="allCards">
-      <ingredientCard v-for="ingredient in ingredients" :key="ingredient.name" :Ingredient="ingredient" />
+    <materialCard v-for="material in materials" :key="material.name" :Material="material" />
   </div>
+  <div id="recipePreview">
+    <h2>RECIPE PREVIEW</h2>
+  </div>
+</div>
 </template>
 
 <script setup>
-import ingredientCard from '@/components/ingredientCard.vue';
-const ingredients = [
+import materialCard from '@/components/materialCard.vue';
+const materials = [
   {
-    name: "Flour",
-    International: true,
-    price: 4.99,
-    img: "https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80&quot;",
+    name: "Tree branch",
+    obtainFrom: "Tree",
+    img: "public/tree branch.png",
   },
   {
-    name: "Eggs",
-    International: true,
-    price: 2.47,
-    img: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1476&q=80&quot;",
+    name: "Wasp nest",
+    obtainFrom: "Tree",
+    img: "public/wasp.png",
   },
   {
-    name: "Pasta",
-    International: true,
-    price: 1.99,
-    img: "https://images.unsplash.com/photo-1547138494-97041dec734b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80&quot;",
+    name: "Wood",
+    obtainFrom: "Tree (axe)",
+    img: "public/wood.png",
   },
   {
-    name: "Butter",
-    International: false,
-    price: 1.89,
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1173&q=80&quot;",
+    name: "Softwood",
+    obtainFrom: "Tree (axe)",
+    img: "public/softwood.png",
   },
   {
-    name: "Rice",
-    International: false,
-    price: 10.99,
-    img: "https://images.unsplash.com/photo-1511497584788-876760111969?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80&quot;",
+    name: "Hardwood",
+    obtainFrom: "Tree (axe)",
+    img: "public/hardwood.png",
   },
   {
-    name: "White onion",
-    International: true,
-    price: 1.79,
-    img: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80&quot;",
+    name: "Stone",
+    obtainFrom: "Rock",
+    img: "public/stone.png",
   },
   {
-    name: "Vegetable oil",
-    International: true,
-    price: 6.99,
-    img: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80&quot;",
+    name: "Iron nugget",
+    obtainFrom: "Rock",
+    img: "public/iron nugget.png",
   },
   {
-    name: "Sea Salt",
-    International: true,
-    price: 1.27,
-    img: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80&quot;",
+    name: "Gold nugget",
+    obtainFrom: "Rock",
+    img: "public/gold nugget.png",
   },
-  ];
+  {
+    name: "Clay",
+    obtainFrom: "Rock",
+    img: "public/clay.png",
+  },
+  {
+    name: "Bamboo piece",
+    obtainFrom: "Bamboo tree (axe)",
+    img: "public/bamboo piece.png",
+  },
+  {
+    name: "Bamboo shoot",
+    obtainFrom: "Dig spot (near bamboo tree)",
+    img: "public/bamboo shoot.png",
+  },
+  {
+    name: "Star fragment",
+    obtainFrom: "Meteor Shower (wishing)",
+    img: "public/star fragment.png",
+  },
+  {
+    name: "Large star fragment",
+    obtainFrom: "Meteor Shower (wishing)",
+    img: "public/large star fragment.png",
+  },
+  {
+    name: "Pearl",
+    obtainFrom: "Diving",
+    img: "public/pearl.png",
+  },
+  {
+    name: "Clump of weeds",
+    obtainFrom: "Island (ground)",
+    img: "public/clumps.png",
+  },
+  {
+    name: "Apple",
+    obtainFrom: "Apple tree",
+    img: "public/apple.png",
+  },
+  {
+    name: "Cherry",
+    obtainFrom: "Cherry tree",
+    img: "public/cherry.png",
+  },
+  {
+    name: "Coconut",
+    obtainFrom: "Coconut tree",
+    img: "public/coconut.png",
+  },
+  {
+    name: "Orange",
+    obtainFrom: "Orange tree",
+    img: "public/orange.png",
+  },
+  {
+    name: "Peach",
+    obtainFrom: "Peach tree",
+    img: "public/peach.png",
+  },
+  {
+    name: "Pear",
+    obtainFrom: "Pear tree",
+    img: "public/pear.png",
+  },
+  {
+    name: "Turnip",
+    obtainFrom: "Daisy Mae",
+    img: "public/turnip.png",
+  },
+  {
+    name: "Glowing moss",
+    obtainFrom: "Boat tour",
+    img: "public/moss.png",
+  },
+  {
+    name: "Vine",
+    obtainFrom: "Boat tour",
+    img: "public/vine.png",
+  },
+  {
+    name: "Manila clam",
+    obtainFrom: "Beach (dig spot)",
+    img: "public/clam.png",
+  },
+  {
+    name: "Boot",
+    obtainFrom: "Fishing",
+    img: "public/boot.png",
+  },
+  {
+    name: "Empty can",
+    obtainFrom: "Fishing",
+    img: "public/can.png",
+  },
+  {
+    name: "Old tire",
+    obtainFrom: "Fishing",
+    img: "public/tire.png",
+  },
+];
 </script>
 
 <style scoped>
+#container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+#recipePreview {
+  background-color: rgb(255, 182, 123);
+  width: 19rem;
+  text-align: center;
+  padding: 1rem;
+}
+h2 {
+  color: rgb(240, 108, 32);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
 #allCards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 2rem;
+  flex: 1;
 }
 </style>

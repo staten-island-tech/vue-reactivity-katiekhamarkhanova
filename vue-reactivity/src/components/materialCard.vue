@@ -1,32 +1,39 @@
 <template>
         <div id="card">
-            <h1>{{ Ingredient.name }}</h1>
-            <img :src = "Ingredient.img" alt="">
+            <img :src = "Material.img" alt="">
+            <h1>{{ Material.name }}</h1>
+            <h2> Obtain via: {{ Material.obtainFrom }}</h2>
             <button>Add to Recipe</button>
         </div>
 </template>
 
 <script setup>
 const props = defineProps({
-    Ingredient: Object,
+    Material: Object,
 });
+
+
 </script>
 
 <style scoped>
 img {
-  width: 250px;
-  height: 300px;
+  width: 9rem;
+  height: 9rem;
   object-fit: cover;
+  border: 2px solid black;
+  margin: 1rem;
 }
 #card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 20%;
+  width: 19%;
   margin: 1rem;
+  border: 2px solid black;
+  padding: 1rem;
 }
 button {
-  margin: 1rem;
+  margin: 0.5rem;
 }
 </style>

@@ -5,27 +5,25 @@ html, body, * {
   padding: 0;
   font-size: 1.2rem;
   box-sizing: border-box;
+  transition: 0.25s;
+  font-family: "Jost", sans-serif;
 }
-
+a {
+  color: rgb(255, 104, 33);
+  text-decoration: none;
+}
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: hsla(165, 55%, 53%, 0.288);
   }
 }
-#allCards {
-  display: flex;
-    place-items: center;
-    flex-direction: row;
-}
+
 @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
   }
 
-  #app {
-    padding: 0 2rem;
-    
-  }
+  
 }
 
