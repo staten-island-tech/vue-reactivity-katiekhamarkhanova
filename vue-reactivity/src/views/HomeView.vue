@@ -1,16 +1,29 @@
 <template>
   <div id="container">
   <div id="allCards">
-    <materialCard v-for="material in materials" :key="material.name" :Material="material" />
+    <materialCard @add-to-recipe="updateRecipe" v-for="material in materials" :key="material.name" :Material="material" :quantity="quantity"/>
   </div>
   <div id="recipePreview">
     <h2>RECIPE PREVIEW</h2>
+    <div id="recipeCards">
+      <recipeMaterial v-for="(material, index) in recipe" :key="index" :Material="material.material" :quantity="material.quantity" />
+    </div>
   </div>
 </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import materialCard from '@/components/materialCard.vue';
+import recipeMaterial from '@/components/recipeMaterial.vue';
+
+const recipe = ref([]);
+const updateRecipe = (data) => {
+  recipe.value.push({ material: data.material, quantity: data.quantity})};
+
+
+  
+console.log(recipe)
 const materials = [
   {
     name: "Tree branch",

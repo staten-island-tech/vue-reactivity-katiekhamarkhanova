@@ -1,9 +1,13 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div id="container">
   </div>
 </template>
-
-<style>
-
+<script>
+</script>
+<style scoped>
+#container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
 </style>
