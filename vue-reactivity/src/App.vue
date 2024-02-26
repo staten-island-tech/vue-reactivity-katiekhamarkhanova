@@ -8,8 +8,6 @@ import { RouterLink, RouterView } from 'vue-router'
   </div>
   <header>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
       </nav>
   </header>
 
@@ -40,7 +38,7 @@ h1 {
 }
 nav{
   background-color: rgb(255, 221, 177);
-  padding: 0.5rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-evenly;
 }

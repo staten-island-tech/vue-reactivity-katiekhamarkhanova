@@ -21,8 +21,6 @@ const recipe = ref([]);
 const updateRecipe = (data) => {
   recipe.value.push({ material: data.material, quantity: data.quantity})};
 
-
-  
 console.log(recipe)
 const materials = [
   {
@@ -173,17 +171,19 @@ const materials = [
   display: flex;
   justify-content: space-between;
   padding: 0;
+  background-image: url("/public/image.png");
 }
 #recipePreview {
   background-color: rgb(255, 182, 123);
   width: 19rem;
   text-align: center;
-  padding: 1rem;
+  padding: 1.4rem;
 }
 h2 {
   color: rgb(240, 108, 32);
   font-weight: 700;
   font-size: 1.6rem;
+  margin: 1rem;
 }
 #allCards {
   display: flex;

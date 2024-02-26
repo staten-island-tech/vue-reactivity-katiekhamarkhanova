@@ -12,6 +12,15 @@ a {
   color: rgb(255, 104, 33);
   text-decoration: none;
 }
+img {
+  background-color: white;
+}
+button {
+  border-style: solid;
+}
+button:hover {
+  cursor: pointer;
+}
 @media (hover: hover) {
   a:hover {
     background-color: hsla(165, 55%, 53%, 0.288);
