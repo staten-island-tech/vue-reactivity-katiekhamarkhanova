@@ -12,18 +12,13 @@
 </template>
 
 <script setup>
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 
 const quantity = ref(1)
 const props = defineProps({
   Material: Object,
 });
-const emits = defineEmits(['add-to-recipe']);
 
-const addToRecipeClick = () => {
-  const data = { material: props.Material, quantity: quantity.value };
-  emits('add-to-recipe', data);
-}
 </script>
 
 <style scoped>

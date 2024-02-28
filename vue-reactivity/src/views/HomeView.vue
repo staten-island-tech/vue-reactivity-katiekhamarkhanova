@@ -177,7 +177,7 @@ const materials = [
   background-color: rgb(255, 182, 123);
   width: 19rem;
   text-align: center;
-  padding: 1.4rem;
+  padding: 1.1rem;
 }
 h2 {
   color: rgb(240, 108, 32);
