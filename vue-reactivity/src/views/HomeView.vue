@@ -13,13 +13,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import materialCard from '@/components/materialCard.vue';
 import recipeMaterial from '@/components/recipeMaterial.vue';
 
-const recipe = ref([]);
-const updateRecipe = (data) => {
-  recipe.value.push({ material: data.material, quantity: data.quantity})};
 
 console.log(recipe)
 const materials = [

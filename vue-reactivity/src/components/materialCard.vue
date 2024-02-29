@@ -7,17 +7,19 @@
       <p>Quantity: {{ quantity }}</p>
       <button id="quantityButton" @click="quantity++">+</button>
     </div>
-    <button @click="addToRecipeClick">Add to Recipe</button>
+    <button @click="store.increment()">Add to Recipe</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { store } from '/src/store.js'
 
 const quantity = ref(1)
 const props = defineProps({
   Material: Object,
 });
+
 
 </script>
 
