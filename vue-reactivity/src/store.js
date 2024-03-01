@@ -1,8 +1,8 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-    recipe: [],
-    increment() {
-        this.recipe.value.push(material);
-    }
+  recipe: [],
+  increment(material) {
+    this.recipe.push(material);
+  }
 })

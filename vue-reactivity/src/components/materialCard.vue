@@ -7,7 +7,7 @@
       <p>Quantity: {{ quantity }}</p>
       <button id="quantityButton" @click="quantity++">+</button>
     </div>
-    <button @click="store.increment()">Add to Recipe</button>
+    <button @click="addToRecipe">Add to Recipe</button>
   </div>
 </template>
 
@@ -20,7 +20,9 @@ const props = defineProps({
   Material: Object,
 });
 
-
+const addToRecipe = (material) => {
+  store.increment(material);
+}
 </script>
 
 <style scoped>

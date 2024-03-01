@@ -1,12 +1,12 @@
 <template>
   <div id="container">
   <div id="allCards">
-    <materialCard @add-to-recipe="updateRecipe" v-for="material in materials" :key="material.name" :Material="material" :quantity="quantity"/>
+    <materialCard v-for="material in materials" :key="material.name" :Material="material" :quantity="quantity" @add-to-recipe="addToRecipe"/>
   </div>
   <div id="recipePreview">
     <h2>RECIPE PREVIEW</h2>
     <div id="recipeCards">
-      <recipeMaterial v-for="(material, index) in recipe" :key="index" :Material="material.material" :quantity="material.quantity" />
+      <recipeMaterial v-for="(material, index) in store.recipe" :key="index" :Material="material.material" :quantity="material.quantity" />
     </div>
   </div>
 </div>
@@ -15,9 +15,15 @@
 <script setup>
 import materialCard from '@/components/materialCard.vue';
 import recipeMaterial from '@/components/recipeMaterial.vue';
+import { store } from '/src/store.js';
+import { ref } from 'vue';
 
+const quantity = ref(1);
 
-console.log(recipe)
+const addToRecipe = (material) => {
+  store.increment(material);
+};
+
 const materials = [
   {
     name: "Tree branch",
