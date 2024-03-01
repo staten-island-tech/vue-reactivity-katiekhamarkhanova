@@ -6,7 +6,7 @@
   <div id="recipePreview">
     <h2>RECIPE PREVIEW</h2>
     <div id="recipeCards">
-      <recipeMaterial v-for="(material, index) in store.recipe" :key="index" :Material="material.material" :quantity="material.quantity" />
+      <recipeMaterial v-for="(material, index) in store.recipe" :key="index" :Material="material" :quantity="quantity" />
     </div>
   </div>
 </div>

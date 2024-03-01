@@ -1,7 +1,7 @@
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 
 export const store = reactive({
-  recipe: [],
+  recipe: ref([]),
   increment(material) {
     this.recipe.push(material);
   }
