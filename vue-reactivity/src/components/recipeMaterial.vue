@@ -1,13 +1,13 @@
 <template>
-    <div id="materialInRecipe">
-      <img :src="Material.img" :alt="Material.name">
-      <div id="textContainer">
-        <h1>{{ Material.name }}</h1>
-        <h3>Quantity: {{ quantity }}</h3>
-      </div>
+  <div id="materialInRecipe">
+    <img :src="Material.img" :alt="Material.name">
+    <div id="textContainer">
+      <h1>{{ Material.name }}</h1>
+      <h3>Quantity: {{ quantity }}</h3>
     </div>
-  </template>
-  
+  </div>
+</template>
+
 <script setup>
   const props = defineProps({
     Material: Object,
