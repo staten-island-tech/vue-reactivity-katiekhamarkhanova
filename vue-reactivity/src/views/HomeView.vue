@@ -29,7 +29,7 @@ const materials = [
   {
     name: "Tree branch",
     obtainFrom: "Tree",
-    img: "public/tree branch.png",
+    img: "/public/tree branch.png",
   },
   {
     name: "Wasp nest",
