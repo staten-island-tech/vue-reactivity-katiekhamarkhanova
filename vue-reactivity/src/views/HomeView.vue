@@ -1,13 +1,14 @@
 <template>
   <div id="container">
   <div id="allCards">
-    <materialCard v-for="material in materials" :key="material.name" :Material="material" :quantity="quantity" @add-to-recipe="addToRecipe"/>
+    <materialCard v-for="material in materials" :key="material.name" :Material="material" :quantity="quantity"/>
   </div>
   <div id="recipePreview">
     <h2>RECIPE PREVIEW</h2>
     <div id="recipeCards">
-      <recipeMaterial v-for="(recipeItem, index) in store.recipe" :key="index" :recipeItem="recipeItem.material" :quantity="recipeItem.quantity" />
+      <recipeMaterial v-for="recipeItem in store.recipe" :key="recipeItem.material.name" :recipeItem="recipeItem.material" :quantity="recipeItem.quantity" />
     </div>
+    <button @click="clearRecipe">Clear Recipe</button>
   </div>
 </div>
 </template>
@@ -20,9 +21,9 @@ import { ref } from 'vue';
 
 const quantity = ref(1);
 
-const addToRecipe = (material) => {
-  store.increment(material, quantity.value);
-};
+function clearRecipe() {
+  store.recipe.splice(0, store.recipe.length);
+}
 
 const materials = [
   {
@@ -193,5 +194,14 @@ h2 {
   justify-content: space-around;
   padding: 2rem;
   flex: 1;
+}
+button {
+  margin: 3rem;
+  padding: 0.3rem;
+  font-weight: bold;
+  color: rgb(97, 218, 207);
+  background-color: rgb(255, 241, 210);
+  border: 6px solid rgba(255, 241, 210, 0.541);
+  border-radius: 10px;
 }
 </style>

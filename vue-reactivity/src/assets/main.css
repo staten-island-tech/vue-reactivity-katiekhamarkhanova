@@ -22,7 +22,7 @@ button:hover {
   cursor: pointer;
 }
 @media (hover: hover) {
-  a:hover {
+  #addRecipe:visited {
     background-color: hsla(165, 55%, 53%, 0.288);
   }
 }
@@ -35,4 +35,3 @@ button:hover {
 
   
 }
-
