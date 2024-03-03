@@ -37,10 +37,10 @@ img {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 19%;
+  width: 18%;
   margin: 1rem;
   border: 8px solid rgba(253, 162, 87, 0.377);
-  padding: 1rem;
+  padding: 0.7rem;
   background-color: rgb(255, 221, 177);
   border-radius: 10px;
 }
@@ -49,14 +49,13 @@ h1 {
 }
 button {
   margin: 0.3rem;
-  padding: 0.6rem;
+  padding: 0.5rem;
   color: rgb(250, 130, 32);
   border-color: rgb(250, 130, 32);
   background-color: rgb(255, 255, 255);
   font-weight: bold;
   border-radius: 30px;
 }
-
 #quantityButton {
   border-radius: 40px;
   padding: 0rem;
