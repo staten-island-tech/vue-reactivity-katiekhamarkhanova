@@ -1,8 +1,8 @@
 <template>
   <div id="materialInRecipe">
-    <img :src="Material.img" :alt="Material.name">
+    <img :src="recipeItem.img" :alt="recipeItem.name">
     <div id="textContainer">
-      <h1>{{ Material.name }}</h1>
+      <h1>{{ recipeItem.name }}</h1>
       <h3>Quantity: {{ quantity }}</h3>
     </div>
   </div>
@@ -10,7 +10,7 @@
 
 <script setup>
   const props = defineProps({
-    Material: Object,
+    recipeItem: Object,
     quantity: Number,
   });
 </script>

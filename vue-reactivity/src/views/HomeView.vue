@@ -6,7 +6,7 @@
   <div id="recipePreview">
     <h2>RECIPE PREVIEW</h2>
     <div id="recipeCards">
-      <recipeMaterial v-for="(material, index) in store.recipe" :key="index" :Material="material" :quantity="quantity" />
+      <recipeMaterial v-for="(recipeItem, index) in store.recipe" :key="index" :recipeItem="recipeItem.material" :quantity="recipeItem.quantity" />
     </div>
   </div>
 </div>
@@ -21,7 +21,7 @@ import { ref } from 'vue';
 const quantity = ref(1);
 
 const addToRecipe = (material) => {
-  store.increment(material);
+  store.increment(material, quantity.value);
 };
 
 const materials = [
